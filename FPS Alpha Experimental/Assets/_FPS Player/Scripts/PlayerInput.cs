@@ -59,6 +59,7 @@ public class PlayerInput : MonoBehaviour
         jumpTimer = -1;
     }
 
+    // Runs for every frame
     void Update()
     {
         _down = Vector2.zero;

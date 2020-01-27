@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed = 8.0f;
     public float slideSpeed = 10.0f;
     public float crouchSpeed = 2f;
+
     [SerializeField]
     private float jumpSpeed = 8.0f;
     [SerializeField]
@@ -36,12 +37,14 @@ public class PlayerMovement : MonoBehaviour
         // Saving component references to improve performance.
         controller = GetComponent<CharacterController>();
     }
-    
+
+    // Runs for every frame    
     private void Update()
     {
         if (forceTime > 0)
             forceTime -= Time.deltaTime;
     }
+
 
     private void FixedUpdate()
     {

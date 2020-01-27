@@ -6,15 +6,16 @@ public enum Status { idle, moving, crouching, sliding, climbingLadder, wallRunni
 
 public class PlayerController : MonoBehaviour
 {
+    // Declare layermask statuses
     public Status status;
     [SerializeField]
-    private LayerMask vaultLayer;
+    private LayerMask vaultLayer = default;
     [SerializeField]
-    private LayerMask ledgeLayer;
+    private LayerMask ledgeLayer = default;
     [SerializeField]
-    private LayerMask ladderLayer;
+    private LayerMask ladderLayer = default;
     [SerializeField]
-    private LayerMask wallrunLayer;
+    private LayerMask wallrunLayer = default;
 
     GameObject vaultHelper;
 
@@ -125,6 +126,9 @@ public class PlayerController : MonoBehaviour
             case Status.sliding:
                 SlideMovement();
                 break;
+            case Status.vaulting:
+                VaultMovement();
+                break;
             case Status.climbingLadder:
                 LadderMovement();
                 break;
@@ -136,9 +140,6 @@ public class PlayerController : MonoBehaviour
                 break;
             case Status.wallRunning:
                 WallrunningMovement();
-                break;
-            case Status.vaulting:
-                VaultMovement();
                 break;
             default:
                 DefaultMovement();
