@@ -33,7 +33,11 @@ public class ObjectHealth : MonoBehaviour
         // If the enemy should be sinking...
         if (isSinking)
         {
+<<<<<<< Updated upstream
             Debug.Log("He should be sinking...");
+=======
+            // Debug.Log("He should be sinking...");
+>>>>>>> Stashed changes
             // ... move the enemy down by the sinkSpeed per second.
             transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
         }
@@ -70,7 +74,10 @@ public class ObjectHealth : MonoBehaviour
 
     void Death()
     {
+<<<<<<< Updated upstream
         Debug.Log("ENEMY DEAD!");
+=======
+>>>>>>> Stashed changes
         // The enemy is dead.
         isDead = true;
 
